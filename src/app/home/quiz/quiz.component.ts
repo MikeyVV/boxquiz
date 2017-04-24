@@ -75,10 +75,18 @@ export class QuizComponent implements OnInit {
       }
       let a = this.duration / 100;
       let b = this.duration % 100;
-      if (b > 10) {
-        this.countdown = "0" + (a - (a % 1)) + ":" + b;
-      } else {
-        this.countdown = "0" + (a - (a % 1)) + ":0" + b;
+      if (a > 9) {
+        if (b > 10) {
+          this.countdown = (a - (a % 1)) + ":" + b;
+        } else {
+          this.countdown = (a - (a % 1)) + ":0" + b;
+        }
+      }else {
+        if (b > 10) {
+          this.countdown = "0"+(a - (a % 1)) + ":" + b;
+        } else {
+          this.countdown = "0"+(a - (a % 1)) + ":0" + b;
+        }
       }
       this.timePercent -= 0.10;
     }, 10);
