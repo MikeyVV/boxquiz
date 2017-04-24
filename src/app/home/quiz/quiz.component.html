@@ -1,63 +1,67 @@
 <!-- content -->
-  <div style="text-align: center">
+<div style="text-align: center">
 
-    <div class="row">
-      <div class="col-sm-6">
-        <p><b>{{ countdown }}</b></p>
-      </div>
-      <div class="col-sm-6">
-        <p><b>{{ currentQuestionNumber }}/10</b></p>
-      </div>
+  <div class="row">
+    <div class="col-xs-4 col-sm-4">
+      <p><b>{{ countdown }}</b></p>
     </div>
-
-    <div class="row">
-      <div class="col-sm-offset-2 col-sm-8">
-        <div class="progress">
-          <div class="progress-bar" role="progressbar" aria-valuenow="70"
-               aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width': timePercent+'%' }">
-            <span class="sr-only">{{ timePercent }}% Complete</span>
-          </div>
-        </div>
-      </div>
+    <div class="col-xs-4 col-sm-4">
+      <p><b>{{ quizCateTitle}}</b></p>
     </div>
-
-    <div class="row">
-      <div class="col-sm-2"></div>
-      <div class="col-sm-8">
-        <div class="bg-1 text-center">
-          <img src="{{currentQuestion.imgUrl}}" height="300" alt="picture">
-          <p style="padding: 20px;font-size: 16pt">{{ currentQuestion.quizText }}</p>
-          <p style="color: #1fa753" *ngIf="isCorrect && answerSend">ถ ถ ถูกต้อง!!!(ทำปากจู๋แบบปัญญา ปริศนาฟ้าแล้บ)</p>
-          <p style="color: #ef4f4f" *ngIf="!isCorrect && answerSend">ผิด!!!(ทำปากแบนแบบปัญญา ปริศนาฟ้าแล้บ) คำตอบที่ถูกต้องคือ <br><span class="pop-text-red">{{ answer }}</span></p>
-        </div>
-      </div>
-      <div class="col-sm-2"></div>
+    <div class="col-xs-4 col-sm-4">
+      <p><b>{{ currentQuestionNumber }}/10</b></p>
     </div>
-
-    <div class="row" style="margin-bottom: 2%">
-      <div class="col-sm-offset-2 col-sm-4">
-        <div class="card quiz-option" (click)="onAnswer(option[0].idoption,currentQuestion.answer)">
-          <p>{{ option[0].option }}</p>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="card quiz-option" (click)="onAnswer(option[1].idoption,currentQuestion.answer)">
-          <p>{{ option[1].option }}</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-offset-2 col-sm-4">
-        <div class="card quiz-option" (click)="onAnswer(option[2].idoption,currentQuestion.answer)">
-          <p>{{ option[2].option }}</p>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="card quiz-option" (click)="onAnswer(option[3].idoption,currentQuestion.answer)">
-          <p>{{ option[3].option }}</p>
-        </div>
-      </div>
-    </div>
-
   </div>
+
+  <div class="row">
+    <div class="col-sm-offset-2 col-sm-8">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="70"
+             aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width': timePercent+'%' }">
+          <span class="sr-only">{{ timePercent }}% Complete</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <div class="bg-1 text-center">
+        <img src="{{currentQuestion.imgUrl}}" style="width:100%; max-width: 300px;"  alt="picture">
+        <p style="padding: 20px;font-size: 16pt">{{ currentQuestion.quizText }}</p>
+        <p style="color: #1fa753" *ngIf="isCorrect && answerSend">ถ ถ ถูกต้อง!!!(ทำปากจู๋แบบปัญญา ปริศนาฟ้าแล้บ)</p>
+        <p style="color: #ef4f4f" *ngIf="!isCorrect && answerSend">ผิด!!!(ทำปากแบนแบบปัญญา ปริศนาฟ้าแล้บ)
+          คำตอบที่ถูกต้องคือ <br><span class="pop-text-red">{{ answer }}</span></p>
+      </div>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-offset-2 col-sm-4">
+      <div class="card quiz-option" #option1 (click)="onAnswer(option1,option[0].idoption,currentQuestion.answer)">
+        <p>{{ option[0].option }}</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card quiz-option" #option2 (click)="onAnswer(option2,option[1].idoption,currentQuestion.answer)">
+        <p>{{ option[1].option }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-offset-2 col-sm-4">
+      <div class="card quiz-option" #option3 (click)="onAnswer(option3,option[2].idoption,currentQuestion.answer)">
+        <p>{{ option[2].option }}</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card quiz-option" #option4 (click)="onAnswer(option4,option[3].idoption,currentQuestion.answer)">
+        <p>{{ option[3].option }}</p>
+      </div>
+    </div>
+  </div>
+
+</div>
 <!-- content -->

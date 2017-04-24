@@ -1,10 +1,10 @@
-<app-navbar></app-navbar>
-<div class="container-fluid">
+<app-navbar (menuOpened)="onToggleMenu()"></app-navbar>
+<div class="container-fluid" style="margin-top: 60px">
   <div class="row">
-    <div class="col-xs-12 col-sm-3 col-md-2">
-      <app-sidebar></app-sidebar>
+    <div class="col-xs-12 col-sm-3 col-md-2 side-bar-menu" #sideBarMenu>
+      <app-sidebar (menuToggled)="onCloseMenu()"></app-sidebar>
     </div>
-    <div class="col-xs-12 col-sm-9 col-md-10">
+    <div class="col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-3 col-md-7">
       <router-outlet></router-outlet>
     </div>
   </div>

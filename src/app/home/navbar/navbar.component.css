@@ -1,3 +1,16 @@
 .navbar {
   border-radius: 0;
 }
+
+.navbar-red {
+  background-color: #d64f4f;
+  border: 0;
+}
+
+.navbar-red .navbar-brand{
+  color: white;
+}
+
+.navbar-red .navbar-brand:hover{
+  color: #dadada;
+}

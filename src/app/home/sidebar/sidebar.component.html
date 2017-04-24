@@ -1,8 +1,20 @@
 <!-- manu -->
-<div class="row user-profile">
+<div style="z-index: 1;" class="row user-profile">
   <div class="col-xs-12">
     <div class="card">
-      <div class="card-content"  style="text-align: center">
+      <div class="card-content" style="text-align: center">
+        <b>หมวดคำถาม</b>
+      </div>
+      <a *ngFor="let cate of quizCate" (click)="toggleMenu()" [routerLink]="['quiz', cate.cate]" routerLinkActive="cate-active">
+        <div class="sidebar-quiz-cate">{{ cate.name }}</div>
+      </a>
+    </div>
+  </div>
+</div>
+<div style="z-index: 1;" class="row user-profile">
+  <div class="col-xs-12">
+    <div class="card">
+      <div class="card-content" style="text-align: center">
         <img [src]="userPicture" class="img-circle" height="150" width="150" alt="Avatar">
         <p style="margin-top: 16px;">{{ name }}</p>
       </div>
@@ -22,25 +34,10 @@
         </table>
       </div>
       <!--<div class="card-footer">-->
-        <a href="#"><div class="card-footer" style="text-align: center">อันดับทั้งหมด</div></a>
+      <a href="#">
+        <div class="card-footer" style="text-align: center">อันดับทั้งหมด</div>
+      </a>
       <!--</div>-->
-    </div>
-  </div>
-</div>
-<div class="row user-profile">
-  <div class="col-xs-12">
-    <div class="card">
-      <div class="card-content" style="text-align: center">
-        <b>หมวดคำถาม</b>
-      </div>
-      <ul>
-        <li><a href="#">เกม</a></li>
-        <li><a href="#">ภาพยนตร์</a></li>
-        <li><a href="#">การ์ตูน</a></li>
-        <li><a href="#">เพลง</a></li>
-        <li><a href="#">กีฬา</a></li>
-        <li><a href="#">ความรู้ทั่วไป</a></li>
-      </ul>
     </div>
   </div>
 </div>

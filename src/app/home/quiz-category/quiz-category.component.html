@@ -3,7 +3,7 @@
   <h1 style="text-align: center; margin-bottom: 2%">ประเภทคำถาม</h1>
   <div *ngFor="let quizCate of quizCates" class="col-sm-5 col-md-4 quiz-cate-card">
       <a [routerLink]="['quiz', quizCate.cate]" class="quiz-cate-name" >
-        <div [ngStyle]="{'padding': '20%','background-image': 'url('+quizCate.picture+')'}" class="card" >
+        <div [ngStyle]="{'padding': '20%','background-image': 'url('+quizCate.picture+')','background-size': 'cover'}" class="card" >
         <p>{{ quizCate.name }}</p>
         </div>
       </a>

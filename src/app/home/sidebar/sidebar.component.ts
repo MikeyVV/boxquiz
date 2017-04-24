@@ -1,6 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FacebookService, InitParams} from 'ngx-facebook';
 import {UserPoint} from '../../shared/user-point.model';
+import {QuizCateService} from "../../quiz-cate.service";
+import {QuizCate} from "../../shared/quiz-cate.model";
 
 @Component({
   selector: 'app-sidebar',
@@ -8,8 +10,10 @@ import {UserPoint} from '../../shared/user-point.model';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
+  @Output() menuToggled = new EventEmitter<void>();
   userPicture: string;
   name: string = "กำลังรับข้อมูล...";
+  quizCate : QuizCate[];
   userPoints: UserPoint[] = [
     {cate: 'เกม', point: 0},
     {cate: 'การ์ตูน', point: 1},
@@ -18,7 +22,10 @@ export class SidebarComponent implements OnInit {
     {cate: 'กีฬา', point: 5},
     {cate: 'ความรู้ทั่วไป', point: 9}
   ];
-  constructor(private fb: FacebookService) {
+  constructor(
+    private fb: FacebookService,
+    private quizCateService: QuizCateService
+  ) {
     const params: InitParams = {
       appId: '770281916471771',
       cookie: true,
@@ -29,7 +36,6 @@ export class SidebarComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("aaa");
     this.fb.getLoginStatus()
       .then(
         (res) => {
@@ -49,6 +55,11 @@ export class SidebarComponent implements OnInit {
           }
         }
       );
+    this.quizCate = this.quizCateService.getQuizCate();
+  }
+
+  toggleMenu() {
+    this.menuToggled.emit();
   }
 
 }

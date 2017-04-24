@@ -25,15 +25,14 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("call APP");
     this.myfb.loginStatusChange
       .subscribe(
         () => {
           this.loginStatus = this.myfb.getStatus();
-          if(this.loginStatus) {
-            this.router.navigate(['/boxquiz']);
-          }else {
+          if(!this.loginStatus) {
             this.router.navigate(['/signin']);
+          }else {
+            this.router.navigate(['/boxquiz']);
           }
         }
       );

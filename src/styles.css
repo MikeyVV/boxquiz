@@ -2,3 +2,10 @@
 body {
   color: #585858;
 }
+
+a:hover  {
+  text-decoration-line: none;
+}
+a:visited {
+  text-decoration-line: none;
+}

@@ -1,4 +1,5 @@
 .card {
+  margin-bottom: 2%;
   border: 1px solid #d0d0d0;
   border-radius: 2px;
   box-shadow: 0 1px 1px 0 #dcdcdc;
@@ -9,6 +10,24 @@
   padding: 5%;
   cursor: pointer;
   transition: all .2s;
+}
+
+.card-option-false {
+  margin-bottom: 2%;
+  border: 1px solid red;
+  background-color: antiquewhite;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px 0 #dcdcdc;
+  border-collapse: collapse;
+}
+
+.card-option-true {
+  margin-bottom: 2%;
+  border: 1px solid green;
+  background-color: azure;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px 0 #dcdcdc;
+  border-collapse: collapse;
 }
 
 .card:hover {

@@ -22,3 +22,25 @@
 .user-profile {
   margin-bottom: 10px;
 }
+
+.sidebar-quiz-cate {
+  padding: 5px 5px 5px 18px;
+  transition: all .2s;
+}
+
+.sidebar-quiz-cate:hover {
+  background-color: #e8e8e8;
+  transition: all .2s;
+}
+
+.cate-active > div:before {
+  content: 'กำลังเล่น ';
+}
+
+.cate-active > div {
+  background-color: #e8e8e8;
+  padding: 18px;
+  transition: all .2s;
+}
+
+
