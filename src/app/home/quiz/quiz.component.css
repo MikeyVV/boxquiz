@@ -1,0 +1,37 @@
+.card {
+  border: 1px solid #d0d0d0;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px 0 #dcdcdc;
+  border-collapse: collapse;
+}
+
+.quiz-option {
+  padding: 5%;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.card:hover {
+  background-color: #f1f1f1;
+  transition: all .2s;
+  transform: translate3d(0,-2px,0);
+  box-shadow: 0 3px 5px 0 #dcdcdc;
+}
+
+.progress {
+  height: 10px;
+  border-radius: 2px;
+}
+
+.progress-bar {
+  transition: width 0s;
+}
+
+.pop-text-red {
+  color: #ef4f4f;
+  border: 1px solid #b97878;
+  border-radius: 2px;
+  background-color: #ffffff;
+  padding: 5px;
+  box-shadow: 0 3px 5px 0 #dcdcdc;
+}

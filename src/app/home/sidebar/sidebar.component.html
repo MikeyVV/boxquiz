@@ -1,0 +1,47 @@
+<!-- manu -->
+<div class="row user-profile">
+  <div class="col-xs-12">
+    <div class="card">
+      <div class="card-content"  style="text-align: center">
+        <img [src]="userPicture" class="img-circle" height="150" width="150" alt="Avatar">
+        <p style="margin-top: 16px;">{{ name }}</p>
+      </div>
+      <div class="card-content">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th colspan="2" style="text-align: center">คะแนนล่าสุด</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let userPoint of userPoints">
+            <td>{{ userPoint.cate }}</td>
+            <td>{{ userPoint.point }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--<div class="card-footer">-->
+        <a href="#"><div class="card-footer" style="text-align: center">อันดับทั้งหมด</div></a>
+      <!--</div>-->
+    </div>
+  </div>
+</div>
+<div class="row user-profile">
+  <div class="col-xs-12">
+    <div class="card">
+      <div class="card-content" style="text-align: center">
+        <b>หมวดคำถาม</b>
+      </div>
+      <ul>
+        <li><a href="#">เกม</a></li>
+        <li><a href="#">ภาพยนตร์</a></li>
+        <li><a href="#">การ์ตูน</a></li>
+        <li><a href="#">เพลง</a></li>
+        <li><a href="#">กีฬา</a></li>
+        <li><a href="#">ความรู้ทั่วไป</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- manu -->
